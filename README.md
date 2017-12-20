@@ -13,7 +13,15 @@
 
    - 第一步 前往node_module里的react-native-puti-umeng-share 文件夹下的ios-umeng-lib拷贝到工程目录下,并添加到项目中;
    ![image](https://github.com/puti94/react-native-puti-umeng-share/blob/master/screenshot/QQ20171124-195428.png)
-   - 第二步 TARGET -> General -> Linked Frameworks and Libraries 添加 `libsqlite3.tbd` `CoreGraphics.framework` 系统库
+   - 第二步 TARGET -> General -> Linked Frameworks and Libraries 添加 `libsqlite3.tbd` `CoreGraphics.framework` 系统库  
+   Add Framework Search Paths: 
+   $(PROJECT_DIR)/../node_modules/react-native-puti-umeng-share/ios-umeng-lib/UMSocial/UMSocialSDK recursive, 
+   $(PROJECT_DIR)/../node_modules/react-native-puti-umeng-share/ios-umeng-lib/UMSocial/UMSocialUI recursive,
+   Add Library Search Paths:
+   $(PROJECT_DIR)/../node_modules/react-native-puti-umeng-share/ios-umeng-lib/UMSocial/SocialLibraries/QQ recursive
+   $(PROJECT_DIR)/../node_modules/react-native-puti-umeng-share/ios-umeng-lib/UMSocial/SocialLibraries/Sina recursive
+   $(PROJECT_DIR)/../node_modules/react-native-puti-umeng-share/ios-umeng-lib/UMSocial/SocialLibraries/WeChat recursive
+   $(PROJECT_DIR)/../node_modules/react-native-puti-umeng-share/ios-umeng-lib/UMSocial/SocialLibraries/UMSocialSDKPlugin recursive
 
    - 第三步 在项目中的info.plist中加入应用白名单，右键info.plist选择source code打开(plist具体设置在Build Setting -> Packaging -> Info.plist File可获取plist路径) 请根据选择的平台对以下配置进行缩减：
    ```
